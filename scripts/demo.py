@@ -29,7 +29,7 @@ def determine_model_cfg(model_path):
     elif "small" in model_path:
         return "configs/samurai/sam2.1_hiera_s.yaml"
     elif "tiny" in model_path:
-        return "configs/samurai/sam2.1_hiera_t.yaml"
+        return "configs/samurai/sam2.1_hiera_t.yZaml"
     else:
         raise ValueError("Unknown model size in path!")
 
@@ -115,7 +115,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--video_path", required=True, help="Input video path or directory of frames.")
     parser.add_argument("--txt_path", required=True, help="Path to ground truth text file.")
-    parser.add_argument("--model_path", default="sam2/checkpoints/sam2.1_hiera_base_plus.pt", help="Path to the model checkpoint.")
+    parser.add_argument("--model_path", default="sam2/checkpoints/sam2.1_hiera_tiny.pt", help="Path to the model checkpoint.")
     parser.add_argument("--video_output_path", default="demo.mp4", help="Path to save the output video.")
     parser.add_argument("--save_to_video", default=True, help="Save results to a video.")
     args = parser.parse_args()
